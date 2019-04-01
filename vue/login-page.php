@@ -1,3 +1,6 @@
+<?php
+require_once '../api/connectiondb.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,16 +14,16 @@
 <body>
 
 <div class="login">
-    <form action="../api/connectiondb.php" method="post">
+    <form action="./select-page.php" method="POST">
     <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" placeholder="User" name="user">
+        <input type="text" class="form-control" placeholder="User" name="user" required>
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" placeholder="Password" name="password">
+        <input type="password" class="form-control" placeholder="Password" name="password" required>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 </body>

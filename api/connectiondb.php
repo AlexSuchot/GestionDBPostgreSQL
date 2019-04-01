@@ -1,30 +1,25 @@
 <?php
 session_start();
-
-if(isset($_POST['user']) && isset($_POST['password'])){
-    $user = $_POST['user']; 
-    $password = $_POST['password'];
-    $_SESSION['user'] = $user;
-    $_SESSION['password'] = $password;
-}
-
-$user = $_SESSION['user'];
-$password = $_SESSION['password'];
 $dbname = 'cours';
 $localhost = 'localhost';
-$port = 5432;
 
+if (isset($_POST['submit'])) {
+    try {
+        $_SESSION['user'] = $_POST['user'];
+        $_SESSION['password'] = $_POST['password'];
+        $username = $_SESSION['user'];
+        $password = $_SESSION['password'];
+        $dsn = "pgsql:host=$localhost;port=5432;dbname=$dbname;user=$username;password=$password";
+        // create a PostgreSQL database connection
+        $conn = new PDO($dsn);
 
-try{
-$conn = pg_connect("host=$localhost port=$port dbname=$dbname user=$user password=$password") or die('Connexion impossible : ' . pg_last_error());
-if($user === 'admin' or $user === 'postgres'){
-    header('Location: ../vue/select-page.php');
-} else{
+        // display a message if connected to the PostgreSQL successfully
+        if ($conn) {
 
+            // echo "Connected to the <strong>$db louloulfx </strong>  database successfully!";
+        }
+    } catch (PDOException $e) {
+        echo 'Veuillez vous reconnectez';die();
+
+    }
 }
-}catch(Exception $e){
-    header('Location: ../vue/login-page.php');
-
-}
-
-?>
