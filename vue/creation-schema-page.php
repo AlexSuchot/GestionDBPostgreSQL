@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once '../api/connectiondb.php';
 ?>
 <!DOCTYPE html>
 <html>
