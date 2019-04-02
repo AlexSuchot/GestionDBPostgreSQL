@@ -1,5 +1,5 @@
 <?php
-require '../api/connectiondb.php';
+require_once '../api/connectiondb.php';
 ?>
 <!DOCTYPE html>
 <html>

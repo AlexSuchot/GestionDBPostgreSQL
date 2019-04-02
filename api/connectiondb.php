@@ -23,3 +23,10 @@ if (isset($_POST['submit'])) {
 
     }
 }
+
+$username = $_SESSION['user'];
+$password = $_SESSION['password'];
+
+$dsn = "pgsql:host=$localhost;port=5432;dbname=$dbname;user=$username;password=$password";
+// create a PostgreSQL database connection
+$conn = new PDO($dsn);
