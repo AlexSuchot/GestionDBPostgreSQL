@@ -1,18 +1,12 @@
 <?php
 require_once '../api/connectiondb.php';
 
-function createSchema($schemaName, $authorization, $user){
-    $query = "CREATE SCHEMA IF NOT EXISTS .'$schemaName'. 
-              AUTHORIZATION .'$authorization'.
-              GRANT ALL ON SCHEMA .'$schemaName'. TO $user";
-    $pdo_select = $conn->prepare($query);
-    $pdo_select->execute();
-}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" media="screen" href="../assets/style.css">
+
 </head>
     <body>
         <div class="navbar">
@@ -30,15 +24,40 @@ function createSchema($schemaName, $authorization, $user){
             </ul>
         </div>
 
-        <form method="post" accept-charset="UTF-8">
-        
-            <h3><label for="name">Schema Name</label></h3>
-            <input id="name" type="text" name="name">
-            <input id="authorization" type="text" name="authorization">
-            <input id="user" type="text" name="user">
-            <input type="submit" onclick="createSchema($_POST['name'], $_POST['authorization'], $_POST['user'])" value="Submit">
+        <?php
+
+if (isset($_POST['submitSchema'])) {
+    $schemaName = $_POST['name'];
+    $userAdmin ="";
+    
+    
+    if($userAdmin != ""){
+        $userAdmin = $_POST['useradmin'];
+    }
+    else{
+        $userAdmin == "";
+    }
+    $query =
+        "CREATE SCHEMA IF NOT EXISTS $schemaName
+         AUTHORIZATION $userAdmin;";
+    $pdo_select = $conn->prepare($query);
+    $pdo_select->execute();
+    Header('Location: succes-schema.php');
+    
+}
+?>
+        <div class="form-schema">
+            <form class="form" method="post" accept-charset="UTF-8">
+                <h4>Nom du schéma</h4>
+                <input class="input-form" id="name" type="text" name="name" placeholder="Nom" required>
             
-        </form>
+                <h4>Nom de l'utilisateur</h4>
+                <input class="input-form" id="useradmin" type="text" name="useradmin" placeholder="Utilisateur">
+               
+                <input class="submit-btn" type="submit" name="submitSchema" value="submit">
+                
+            </form>
+        </div>
     </body>
 </html>
 

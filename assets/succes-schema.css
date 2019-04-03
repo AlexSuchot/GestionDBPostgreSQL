@@ -1,0 +1,28 @@
+.succes-div{
+    width: 1200px;
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.succes-button{
+    color:white;
+    text-decoration: none;
+}
+
+.succes-button:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.btn{
+    background:#01B9FF;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+   
+}
+.btn:hover{
+    background:#005C7F;
+    
+}
