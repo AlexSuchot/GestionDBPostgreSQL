@@ -6,40 +6,34 @@ require_once '../api/connectiondb.php';
 <html>
 <head>
 <link rel="stylesheet" type="text/css" media="screen" href="../assets/style.css">
+<link rel="stylesheet" type="text/css" href="../assets/succes-schema.css">
+
 
 </head>
     <body>
         <div class="navbar">
             <ul>
                 <li><a class="active" href="select-page.php">Affichage des données</a></li>
+
+                <?php if($_SESSION['user'] === 'admin'): ?>
                     <li><a href="creation-table-page.php">Creation de table</a></li>
                     <li><a class="active" href="creation-schema-page.php">Creation de schema</a></li>
                     <li><a href="grant-revoke-page.php">Attribution et révocation de droit</a></li>
                     <li><a href="creation-role-page.php">Création d'utilisateur</a></li>
-
+                <?php endif; ?>
+                
                 <li><a href="../api/logout.php">Deconnexion</a></li>
             </ul>
         </div>
 
-        <?php
+        <div class="succes-div">
+            <p class="">Félicitation, schéma créé avec succès !</p>
+            <button class="btn"><a class="succes-button" href="creation-schema-page.php">
+                Créer un autre schema ?
 
-if (isset($_POST['submitSchema'])) {
-    $schemaName = $_POST['name'];
-    $query =
-        "CREATE SCHEMA $schemaName";
-    $pdo_select = $conn->prepare($query);
-    $pdo_select->execute();
-    Header('Location: succes-schema.php');
-    
-}
-?>
-        <div class="form-schema">
-            <form class="form" method="post" accept-charset="UTF-8">
-                <h4>Nom du schéma</h4>
-                <input class="input-form" id="name" type="text" name="name" placeholder="Nom" required>
-                <input class="submit-btn" type="submit" name="submitSchema" value="submit">
-                
-            </form>
+            </button>
         </div>
     </body>
 </html>
+
+

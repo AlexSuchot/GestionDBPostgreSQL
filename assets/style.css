@@ -95,3 +95,39 @@ td {
 h2 {
 text-align: center;
 }
+
+.form-schema{
+  
+  width: 1200px;
+  margin-left: 40%;
+  margin-right: auto;
+  
+}
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.input-form{
+  padding: 8px;
+  margin-bottom: 20px;
+  width:180px;
+}
+.submit-btn{
+  background:#01B9FF;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    width:200px;
+}
+
+.submit-btn:hover{
+  background:#005C7F;
+  
+}
+h4{
+  font-size: 0.8em;
+  margin:5px;
+}
+
+
