@@ -13,16 +13,15 @@ if (isset($_POST['submit'])) {
 
     }
 }
-
-
+try {
 $username = $_SESSION['user'];
 $password = $_SESSION['password'];
+
 $dsn = "pgsql:host=$localhost;port=5432;dbname=$dbname;user=$username;password=$password";
 // create a PostgreSQL database connection
 $conn = new PDO($dsn);
+}
+catch (PDOException $e) {
+    echo 'Veuillez vous reconnectez';die();
 
-// display a message if connected to the PostgreSQL successfully
-if ($conn) {
-
-    // echo "Connected to the <strong>$db louloulfx </strong>  database successfully!";
 }
