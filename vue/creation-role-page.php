@@ -25,7 +25,7 @@ if (isset($_POST['submitRole'])) {
     $userPassword = $_POST['userPassword'];
 
     $query =
-        "CREATE USER $nameUser WITH PASSWORD '$userPassword' LOGIN SUPERUSER";
+        "CREATE USER $nameUser WITH PASSWORD '$userPassword'";
     $pdo_select = $conn->prepare($query);
     $pdo_select->execute();
 }
