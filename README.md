@@ -6,7 +6,7 @@ Nous avons réalisé cette interface avec Elouan Lafréchoux, Alexandre Suchot e
 
 ## Choix technique
 
-Après avoir hésité entre l'utilisation de nodeJS et de PHP, nous avons préféré utiliser php car nos compétences pour réaliser le projet était mieux adapter avec l'utilisation du php. Puis toutes les requêtes à utiliser sont en POSTGRESQL.
+Après avoir hésité entre l'utilisation de nodeJS et de PHP, nous avons préféré utiliser php car nos compétences pour réaliser le projet était mieux adapté avec l'utilisation du php. Puis toutes les requêtes à utiliser sont en POSTGRESQL.
 
 ## IHM (Interface Homme Machine)
 
@@ -35,7 +35,7 @@ Pour la page gestion des privilèges, liberté d'utilisations en fonction des be
 ``` GRANT PRIVILEGES ```
 ``` REVOKE PRIVILEGES ``` 
 
-Pour la page de création d'utilisateur : (s'affiche uniquement en super utilisateur)
+Pour la page de création d'utilisateur, suivre le formulaire également : (s'affiche uniquement en super utilisateur)
 
 ``` "CREATE USER userName WITH PASSWORD userPassword" ``` 
 
