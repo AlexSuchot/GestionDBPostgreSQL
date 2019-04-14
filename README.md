@@ -10,7 +10,33 @@ Après avoir hésité entre l'utilisation de nodeJS et de PHP, nous avons préf�
 
 ## IHM (Interface Homme Machine)
 
-Notre interface web se présente sous la forme d'un site web, la première page à apparaitre est la page de connexion, si on essaie d'aller sur une autre page sans se connecter ce n'est pas possible. Pour la connexion il faut rentrer un nom d'utilisateur valide avec ce qu'il y a sur pgAdmin par exemple (et un mot de passe).
-Une fois connecter l'utilisateur se retrouve sur la page qui affiche les tableaux de la base de données. Nous avons mis une bar de navigation en haut afin que l'utilisateur puisse se diriger facilement sur toute l'interface web. 
-Alors de gauche à droite sur la bar de navigation il y a tout d'abord la page de création de table, alors il faut rentrer "CREATE TABLE (nom_du_schema_existant).(nom_de_la_table) {(les champs que vous voulez)};" afin de pouvoir créer la table que vous voulez. Ensuite il y a la création de schéma, vous avez juste à renseigner le nom de schéma que vous voulez sur la page. Après il y a la page d'attribution et de révocation de droits. Puis la dernière page est celle de la création d'un nouvel utilisateur en lui donnant un mot de passe et un nom d'utilisateur.
+Notre interface web se présente sous la forme d'un site web, la première page à apparaitre est la page de connexion, si on essaie d'aller sur une autre page sans se connecter ce n'est pas possible. 
+
+Pour la connexion il faut rentrer un nom d'utilisateur valide avec ce qu'il y a sur pgAdmin par exemple (et un mot de passe).
+
+La Navbar affiche des liens différents en fonction de l'utilisateur, si on est super utilisateur on peut gérer entièrement la base. Avec par exemple en utilisateur "admin" et en mot de passe "admin".
+
+Une fois connecté l'utilisateur se retrouve sur la page qui affiche les tableaux de la base de données (select). Nous avons mis une bar de navigation en haut afin que l'utilisateur puisse se diriger facilement sur toute l'interface web. 
+
+
+## Détail des pages :
+
+Sur la page de création de table : (s'affiche uniquement en super utilisateur)
+
+``` "CREATE TABLE (nom_du_schema_existant).(nom_de_la_table);" ```
+ {(les champs que vous voulez)}
+ 
+ 
+Sur la page création de schéma suivre le formulaire. (s'affiche uniquement en super utilisateur)
+
+
+Pour la page gestion des privilèges, liberté d'utilisations en fonction des besoins : (s'affiche uniquement en super utilisateur)
+
+``` GRANT PRIVILEGES ```
+``` REVOKE PRIVILEGES ``` 
+
+Pour la page de création d'utilisateur : (s'affiche uniquement en super utilisateur)
+
+``` "CREATE USER userName WITH PASSWORD userPassword" ``` 
+
 Enfin à droite de la navbar il est possible de se déconnecter et de retourner à la page de connexion. 
