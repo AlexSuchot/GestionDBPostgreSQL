@@ -16,10 +16,12 @@ Pour la connexion il faut rentrer un nom d'utilisateur valide avec ce qu'il y a 
 
 La Navbar affiche des liens différents en fonction de l'utilisateur, si on est super utilisateur on peut gérer entièrement la base. Avec par exemple en utilisateur "admin" et en mot de passe "admin".
 
-Une fois connecté l'utilisateur se retrouve sur la page qui affiche les tableaux de la base de données (select). Nous avons mis une bar de navigation en haut afin que l'utilisateur puisse se diriger facilement sur toute l'interface web. 
+Une fois connecté l'utilisateur se retrouve sur la page qui affiche les tableaux de la base de données (select). Nous avons mis une barre de navigation en haut afin que l'utilisateur puisse se diriger facilement sur toute l'interface web. 
 
 
 ## Détail des pages :
+
+Sur la page d'affichage de table: les tables s'affichent sous forme de tableaux. (s'affiche uniquement en super utilisateur)
 
 Sur la page de création de table : (s'affiche uniquement en super utilisateur)
 
